@@ -6,8 +6,8 @@ import mysql.connector
 app = Flask(__name__)
 mydb = mysql.connector.connect(
     host = "localhost",
-    user = "root",
-    password = "vicky1598",
+    user = "ilearnplace",
+    password = "ilearnplace",
     database = "ilearnplace"
     )
 
@@ -44,4 +44,4 @@ def add_buy_now():
     response = {"success":True,"message":"product out of stock, notify you soon "}
     return jsonify(response)
 
-app.run(debug=True)
+app.run(host="0.0.0.0", port=5000,debug=True)
