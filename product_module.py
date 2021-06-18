@@ -1,9 +1,7 @@
-import mysql.connector as my
-conn = my.connect(host="localhost",
-                  user="root",
-                  passwd="",
-                  database="ilearnplace")
-cur = conn.cursor()
+import mysqldb
+mydb= mysqldb.connector_mysql()
+
+mycursor = mydb.cursor()
 def create():
     c = "create table product" \
         "(product_id int(10) primary key auto_increment," \
@@ -14,8 +12,8 @@ def create():
         "description varchar(255), " \
         "category varchar(50))"
     try:
-        cur.execute(c)
-        conn.commit()
+        mycursor.execute(c)
+        mydb.commit()
         print("table created")
     except:
         print("failed")
