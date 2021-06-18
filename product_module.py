@@ -3,7 +3,7 @@ mydb= mysqldb.connector_mysql()
 
 mycursor = mydb.cursor()
 def create():
-    c = "create table productplace" \
+    c = "create table product" \
         "(product_id int(10) primary key auto_increment," \
         "product_name varchar(50)," \
         "price int(10), " \
