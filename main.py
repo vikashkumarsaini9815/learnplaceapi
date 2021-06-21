@@ -16,11 +16,12 @@ def add_contactus():
     record = json.loads(request.data)
     username1 = record["username"]
     usercontact = record["contact"]
+    useremail = record["email"]
     usermessage = record["message"]
 
 
-    sql = " INSERT INTO contact_us(username,contact,message) VALUES (%s,%s,%s)"
-    val = (username1,usercontact,usermessage)
+    sql = " INSERT INTO contact_us(username,contact,email,message) VALUES (%s,%s,%s,%s)"
+    val = (username1,usercontact,useremail,usermessage)
 
     mycursor.execute(sql,val,)
     mydb.commit()
