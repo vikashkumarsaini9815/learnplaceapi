@@ -1,14 +1,15 @@
 import jwt
 secretkey='poojasecretkey'
-def encode(contact):
+def jwtEncode(contact):
     token = jwt.encode({'contact': contact}, secretkey)
     print(token)
     return token
 
-def decode(token):
+def jwtDecode(token):
     dec = jwt.decode(token, secretkey, 'HS256')
     print(dec)
     return dec
 
-token=encode(9088554022)
-decode(token)
+if __name__ == '__main__':
+    token=jwtEncode(9088554022)
+    jwtDecode(token)
